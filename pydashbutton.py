@@ -31,6 +31,7 @@ def log_button_press():
 
 def detect_button(pkt):
     if pkt.haslayer(DHCP):
+        print(pkt[Ether].src)
         if pkt[Ether].src == MAC_ADDRESS_BUTTON1:
             print("This button doesn't do anything yet.")
         elif pkt[Ether].src == MAC_ADDRESS_BUTTON2:
